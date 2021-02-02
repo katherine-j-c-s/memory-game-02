@@ -9,3 +9,4 @@
         cards[i].addEventListener('click', flipCard);
     }
 }());
+// coment
