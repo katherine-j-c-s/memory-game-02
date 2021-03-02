@@ -4,6 +4,7 @@
     var hasFlippedCard = false;
     var lockBoard = false;
     var firstCard, secondCard;
+
     function flipCard() {
         console.log("clik",this);
         if (lockBoard) {
@@ -61,8 +62,17 @@
         console.log("removeFlipClass")
         resetBoard();
     }
+    function shuffle() {
+        for (var i=0; i<cards.length; i++) {
+            var ramdomPos = Math.floor(Math.random() * 12);
+            cards[i].style.order = ramdomPos;
+        }
+    }
+
+    shuffle();
+
     for (var i=0; i<cards.length; i++){
-     //   console.log(`%c index: ${i} elemento`,'color:green',cards[i])
+        //   console.log(`%c index: ${i} elemento`,'color:green',cards[i])
         cards[i].addEventListener('click', flipCard);
     }
 
